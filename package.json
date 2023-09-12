@@ -141,8 +141,8 @@
   },
   "scripts": {
     "test": "jest --runInBand --detectOpenHandles --forceExit",
-    "dev": "nodemon app.js",
-    "start": "nodemon app/server.js"
+    "dev": "node app/server.js",
+    "start": "node app/server.js"
   },
   "jest": {
     "testEnvironment": "node",
