@@ -125,6 +125,7 @@
     "transformers": "^1.8.3",
     "type-is": "^1.6.18",
     "uglify-to-browserify": "^1.0.2",
+    "uglifyjs": "^2.4.11",
     "undefsafe": "^2.0.5",
     "unpipe": "^1.0.0",
     "utils-merge": "^1.0.1",
