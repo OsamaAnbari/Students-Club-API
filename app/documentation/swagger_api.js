@@ -65,8 +65,8 @@ const options = {
         "tags": [
           "users"
         ],
-        "summary": "Add a new user",
-        "description": "Add a new user",
+        "summary": "add a new user",
+        "description": "add a new user",
         "requestBody": {
           "description": "Create a new user",
           "content": {
@@ -111,8 +111,8 @@ const options = {
             "description": "Numeric ID of the user to get"
           }
         ],
-        "summary": "get user",
-        "description": "get user",
+        "summary": "get user by id",
+        "description": "get user by id",
         "responses": {
           "200": {
             "description": "Successful",
@@ -144,8 +144,355 @@ const options = {
             "description": "Numeric ID of the user to get"
           }
         ],
-        "summary": "delete user",
-        "description": "delete user",
+        "summary": "delete user by id",
+        "description": "delete user by id",
+        "responses": {
+          "200": {
+            "description": "Successful"
+          },
+          "502": {
+            "description": "Server error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "users"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "Numeric ID of the user to put"
+          }
+        ],
+        "summary": "modify user by id",
+        "description": "modify user by id",
+        "responses": {
+          "200": {
+            "description": "Successful"
+          },
+          "502": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/activities": {
+      "get": {
+        "tags": [
+          "activities"
+        ],
+        "summary": "get all activities",
+        "description": "get all activities",
+        "responses": {
+          "200": {
+            "description": "Successful"
+          },
+          "502": {
+            "description": "Server error"
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "activities"
+        ],
+        "summary": "add a new activity",
+        "description": "add a new activity",
+        "requestBody": {
+          "description": "Create a new activity",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/activities/{id}": {
+      "delete": {
+        "tags": [
+          "activities"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "Numeric ID of the activity to get"
+          }
+        ],
+        "summary": "delete activity by id",
+        "description": "delete activity by id",
+        "responses": {
+          "200": {
+            "description": "Successful"
+          },
+          "502": {
+            "description": "Server error"
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "activities"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "Numeric ID of the activity to put"
+          }
+        ],
+        "summary": "modify activity by id",
+        "description": "modify activity by id",
+        "responses": {
+          "200": {
+            "description": "Successful"
+          },
+          "502": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/messages/": {
+      "post": {
+        "tags": [
+          "messages"
+        ],
+        "summary": "add a new messages",
+        "description": "add a new messages",
+        "requestBody": {
+          "description": "Create a new messages",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/messages/getsent": {
+      "get": {
+        "tags": [
+          "messages"
+        ],
+        "summary": "get sent messages",
+        "description": "get sent messages",
+        "responses": {
+          "200": {
+            "description": "Successful"
+          },
+          "502": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/messages/getreceived": {
+      "get": {
+        "tags": [
+          "messages"
+        ],
+        "summary": "get received messages",
+        "description": "get received messages",
+        "responses": {
+          "200": {
+            "description": "Successful"
+          },
+          "502": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/messages/{id}": {
+      "get": {
+        "tags": [
+          "messages"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "Numeric ID of the activity to get"
+          }
+        ],
+        "summary": "get activity by id",
+        "description": "get activity by id",
+        "responses": {
+          "200": {
+            "description": "Successful",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          },
+          "502": {
+            "description": "Server error"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "messages"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "description": "Numeric ID of the messages to get"
+          }
+        ],
+        "summary": "delete messages by id",
+        "description": "delete messages by id",
+        "responses": {
+          "200": {
+            "description": "Successful"
+          },
+          "502": {
+            "description": "Server error"
+          }
+        }
+      }
+    },
+    "/login/admin": {
+      "post": {
+        "tags": [
+          "login"
+        ],
+        "summary": "login as an admin",
+        "description": "login as an admin",
+        "requestBody": {
+          "description": "login as an admin",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/login/user": {
+      "post": {
+        "tags": [
+          "login"
+        ],
+        "summary": "login as a user",
+        "description": "login as a user",
+        "requestBody": {
+          "description": "login as a user",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Activity"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful operation",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Activity"
+                }
+              }
+            }
+          },
+          "405": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+    "/personal": {
+      "get": {
+        "tags": [
+          "pesrsonal"
+        ],
+        "summary": "get my information",
+        "description": "get my information",
         "responses": {
           "200": {
             "description": "Successful"
