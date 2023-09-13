@@ -152,7 +152,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OsamaAnbari/mysystem-back.git"
+    "url": "git+https://github.com/OsamaAnbari/Students-Club-API.git"
   },
   "keywords": [
     "git",
@@ -166,7 +166,7 @@
   "author": "osamaanbari",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/OsamaAnbari/mysystem-back/issues"
+    "url": "https://github.com/OsamaAnbari/Students-Club-API/issues"
   },
-  "homepage": "https://github.com/OsamaAnbari/mysystem-back#readme"
+  "homepage": "https://github.com/OsamaAnbari/Students-Club-API#readme"
 }

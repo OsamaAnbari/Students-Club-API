@@ -1,4 +1,4 @@
-# asil-system-API
+# Student Club | API
 <br />
 This API is hosted on https://my-system-api.onrender.com/api-docs/
 <br /><br />
